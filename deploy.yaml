@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labels:
+    app: new
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: new
+  template:
+    metadata:
+      labels:
+        app: new
+    spec:
+      containers:
+      - name: my-container
+        image: mksethi/project2nd
+        ports:
+        - containerPort: 80
